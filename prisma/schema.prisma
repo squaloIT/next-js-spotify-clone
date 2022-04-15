@@ -37,6 +37,7 @@ model Artist {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   name      String   @unique
+  avatar    String
   songs     Song[]
 }
 

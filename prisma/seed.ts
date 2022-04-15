@@ -1,8 +1,8 @@
 import { PrismaClient } from '@prisma/client'
 import bcrypt from 'bcrypt'
 import { artistsData } from './artistsData'
-
 const prisma = new PrismaClient()
+
 const run = async () => {
   await Promise.all(
     artistsData.map(async artist => {
@@ -11,11 +11,13 @@ const run = async () => {
         update: {},
         create: {
           name: artist.name,
+          avatar: artist.avatar,
           songs: {
             create: artist.songs.map(s => ({
               name: s.name,
               url: s.url,
-              duration: s.duration
+              duration: s.duration,
+
             }))
           }
         }

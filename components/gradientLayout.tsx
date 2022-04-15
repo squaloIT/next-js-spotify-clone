@@ -15,6 +15,10 @@ const GradientLayout = ({ imageSrc, subtitle, title, color, children, descriptio
           <Text fontSize='xx-small' casing='uppercase'>{description}</Text>
         </Box>
       </Flex>
+
+      <Box paddingY='20px'>
+        {children}
+      </Box>
     </Box>
   )
 
